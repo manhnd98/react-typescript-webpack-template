@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "ESNext",
@@ -7,18 +9,20 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "allowJs": true,
-    "baseUrl": "src",
+    "baseUrl": "./",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "downlevelIteration": true,
     "paths": {
       "*": ["src/*"],
       "constant": ["src/constant"],
-      "constant/*": ["src/constant/*"]
+      "constant/*": ["src/constant/*"],
+      "types": ["src/types"],
+      "types/*": ["src/types/*"]
     },
     "lib": ["esnext", "dom", "dom.iterable"],
     "sourceMap": true,
     "noImplicitAny": false
   },
-  "exclude": ["node_modules", "build"],
+  "exclude": ["node_modules", "build"]
 }

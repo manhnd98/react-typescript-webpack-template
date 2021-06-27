@@ -1,9 +1,9 @@
 import { EMPTY_FUNCTION } from '../../constant/empty';
-import React, { ReactNode } from "react";
+import React, { ReactNode, Component } from "react";
 import { ButtonProps } from "./button.model";
 import "./button.scss";
 
-export default class ButtonComponent extends React.Component<ButtonProps> {
+export default class ButtonComponent extends Component<ButtonProps> {
   children: ReactNode;
   onClick = EMPTY_FUNCTION;
 
