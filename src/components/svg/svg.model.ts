@@ -1,3 +1,3 @@
 export interface SvgProps {
-  src: string;
+    src?: string;
 }
