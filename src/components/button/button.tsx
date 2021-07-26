@@ -18,3 +18,4 @@ export default class ButtonComponent extends Component<ButtonProps> {
     return <button className="tw-flex">{this.children}</button>;
   }
 }
+  
