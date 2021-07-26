@@ -21,8 +21,10 @@ const config: Configuration = {
     entry: './src/index.tsx',
     module: {
         rules: [
+            // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
+            // {test: /\.tsx?$/, loader: 'ts-loader'},
             {
-                test: /\.(ts|js)x?$/i,
+                test: /\.tsx?$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',

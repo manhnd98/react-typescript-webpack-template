@@ -1,10 +1,11 @@
 import SvgComponent from 'components/svg/svg';
 import React, {Component, ReactNode} from 'react';
 import ButtonComponent from './components/button/button';
+import './style.scss';
 
 export default class AppComponent extends Component {
 
-    constructor(props: any) {
+    constructor(props: unknown) {
         super(props);
     }
 

@@ -4,7 +4,7 @@ import React from 'react';
 import {Component, ReactNode} from 'react';
 import { StaticRequestService } from 'services/static-request.service';
 import {ICONS_PATH} from 'tokens/icons-path';
-import {StringHandler} from 'types/handler';
+import type {StringHandler} from 'types/handler';
 import {isIE} from '../../utils/browser';
 import {SvgProps} from './svg.model';
 
@@ -23,11 +23,6 @@ export default class SvgComponent extends Component<SvgProps> {
 
         const {src} = props;
         this.icon = src;
-
-        this.staticRequestService.request('http://localhost:4000/icons/hello.svg').then(response => {
-            console.log(response);
-            console.log(this.staticRequestService)
-        })
     }
 
     render(): ReactNode {
@@ -45,7 +40,7 @@ export default class SvgComponent extends Component<SvgProps> {
     }
 
     private get isExternal(): boolean {
-        return this.isUrl || (this.isIE && this.isUse) || this.i
+        return this.isUrl || (this.isIE && this.isUse) || this.isCrossDomain;
     }
 
     private get isUrl(): boolean {
@@ -63,5 +58,11 @@ export default class SvgComponent extends Component<SvgProps> {
     @acoPure
     private resolveName(name: string, iconsPath: StringHandler<string>) {
         return iconsPath(name);
+    }
+
+    private getExternalIcon(src: string) {
+        const url = src.includes('.svg') ? src : this.use;
+
+        return this.staticRequestService.request(url)
     }
 }

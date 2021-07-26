@@ -37,7 +37,7 @@ export function acoPure<T>(
         enumerable,
         get(): T {
             let previousArgs: ReadonlyArray<unknown> = [];
-            let previousResult: any;
+            let previousResult: unknown;
 
             const patched = (...args: Array<unknown>) => {
                 if (
@@ -57,6 +57,7 @@ export function acoPure<T>(
                 value: patched,
             });
 
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             return patched as any;
         },
     };

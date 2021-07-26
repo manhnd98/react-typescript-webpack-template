@@ -14,11 +14,11 @@
     "resolveJsonModule": true,
     "downlevelIteration": true,
     "paths": {
-      "*": ["src/*"],
-      "constant": ["src/constant"],
+      "constant": ["src/constant/index.tsx"],
       "constant/*": ["src/constant/*"],
-      "types": ["src/types"],
-      "types/*": ["src/types/*"]
+      "types": ["src/types/index.tsx"],
+      "types/*": ["src/types/*"],
+      "*": ["src/*"]
     },
     "lib": ["esnext", "dom", "dom.iterable"],
     "sourceMap": true,

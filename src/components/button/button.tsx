@@ -15,6 +15,6 @@ export default class ButtonComponent extends Component<ButtonProps> {
   }
 
   render(): ReactNode {
-    return <button className="">{this.children}</button>;
+    return <button className="tw-flex">{this.children}</button>;
   }
 }

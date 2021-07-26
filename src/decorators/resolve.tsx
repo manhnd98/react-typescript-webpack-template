@@ -3,9 +3,9 @@ import {container, InjectionToken} from 'tsyringe';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function Inject(token: InjectionToken<unknown>): any {
     return function (
-        _target: any,
+        _target: unknown,
         propertyKey: string,
-        {get, enumerable, value},
+        {get, enumerable},
     ): unknown {
         if (get) {
             return {
@@ -32,7 +32,7 @@ export function Inject(token: InjectionToken<unknown>): any {
                     value: instance,
                 });
 
-                return instance as any;
+                return instance as unknown;
             },
         };
     };
